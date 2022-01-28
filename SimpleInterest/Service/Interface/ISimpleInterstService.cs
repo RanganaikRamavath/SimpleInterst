@@ -1,0 +1,7 @@
+﻿namespace SimpleInterest.Service.Interface
+{
+    public interface ISimpleInterstService
+    {
+        public int CalculateSimpleInterest(SimpleInterestModel siInput);
+    }
+}
