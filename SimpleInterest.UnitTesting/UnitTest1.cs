@@ -2,7 +2,8 @@ using FakeItEasy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleInterest.Controllers;
 using SimpleInterest.Service.Interface;
-using Xunit;
+using SimpleInterest.Service;
+//using Xunit;
 
 
 
@@ -12,53 +13,50 @@ namespace SimpleInterest.UnitTesting
     public class UnitTest1
     {
 
-        /* private  ISimpleInterstService _simpleInterestService;
-         private  SimpleInterestController _simpleInterestController;
+        private readonly ISimpleInterstService _simpleInterestService;
+         private readonly SimpleInterestController _simpleInterestController;
          public UnitTest1()
          {
-              _simpleInterestService = A.Fake<ISimpleInterstService>();
+              this._simpleInterestService = A.Fake<ISimpleInterstService>();
 
-              _simpleInterestController = new SimpleInterestController(_simpleInterestService);
+              this._simpleInterestController = new SimpleInterestController(_simpleInterestService);
 
-         }*/
-
-        [Fact]
+         }
+        
+        [TestMethod]
         public void Validate_Interest_calculator()
         {
+
             // Arrange
-            var _simpleInterestService = A.Fake<ISimpleInterstService>();
-
-            var _simpleInterestController = new SimpleInterestController(_simpleInterestService);
-
             var _simleInModel = A.Fake<SimpleInterestModel>();
             _simleInModel.Principal = 50000;
             _simleInModel.Year = 10;
             _simleInModel.RateOfInterest = 8;
+            // var _simpleInterestService = A.Fake<ISimpleInterstService>();
+
+            //var _simpleInterestController = new SimpleInterestController(_simpleInterestService);
+
+            var sinterestObj = A.Fake<SimpleInterstService>();
             var actualresult = (_simleInModel.Principal * _simleInModel.Year * _simleInModel.RateOfInterest) / 100;
             var _result = 0;
+            var testresult1 = sinterestObj.CalculateSimpleInterest(_simleInModel);
             A.CallTo(() => _simpleInterestService.CalculateSimpleInterest(_simleInModel)).Returns(_result);
-
-
+            var _simpleInterestController = new SimpleInterestController(_simpleInterestService);
+            var _simpleInterestContr = new SimpleInterestController(sinterestObj);
             //Act
-            var resultInterest = _simpleInterestController.Get(_simleInModel);
+
+            //_simleInModel.Year = 12;
+            var testresult2 = _simpleInterestContr.Get(_simleInModel);
 
             //Assert
 
-            A.CallTo(() => _simpleInterestService.CalculateSimpleInterest(_simleInModel)).MustHaveHappenedOnceExactly();
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(resultInterest, actualresult);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(resultInterest, 0);
+            A.CallTo(() => _simpleInterestService.CalculateSimpleInterest(_simleInModel)).MustHaveHappenedOnceOrLess();
+            Assert.AreEqual(testresult1, actualresult);
+            Assert.AreEqual(actualresult, testresult2);
+            Assert.AreNotEqual(testresult2, 1);
         }
 
 
-       /* [Fact]
-        public void TestMethod1()
-        {
-            var simpleInterestService = A.Fake<ISimpleInterstService>();
-
-            var simpleInterest = new SimpleInterestController(simpleInterestService);
-
-        }
-       */
 
     }
 }
