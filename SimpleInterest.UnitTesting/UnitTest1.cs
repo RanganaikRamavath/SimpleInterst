@@ -32,17 +32,14 @@ namespace SimpleInterest.UnitTesting
             _simleInModel.Principal = 50000;
             _simleInModel.Year = 10;
             _simleInModel.RateOfInterest = 8;
-            // var _simpleInterestService = A.Fake<ISimpleInterstService>();
-
-            //var _simpleInterestController = new SimpleInterestController(_simpleInterestService);
-
+           
             var _sinterestObj = A.Fake<SimpleInterstService>();
             var actualresult = (_simleInModel.Principal * _simleInModel.Year * _simleInModel.RateOfInterest) / 100;
             var _result = 0;
 
             //Act
 
-            //_simleInModel.Year = 12;
+           
             var testresult1 = _sinterestObj.CalculateSimpleInterest(_simleInModel);
             A.CallTo(() => _simpleInterestService.CalculateSimpleInterest(_simleInModel)).Returns(_result);
 
@@ -79,7 +76,7 @@ namespace SimpleInterest.UnitTesting
            
             //Act
 
-            //_simleInModel.Year = 20;
+            
             var testresult2 = _simpleInterestControllr.Get(_simleInModel);
             
             //Assert
