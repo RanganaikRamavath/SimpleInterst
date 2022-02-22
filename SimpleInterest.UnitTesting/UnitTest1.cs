@@ -85,6 +85,7 @@ namespace SimpleInterest.UnitTesting
            
             Assert.AreEqual(actualresult, testresult2);
             Assert.AreNotEqual(testresult2, 1);
+            //Assert.IsNull(testresult2);
         }
 
     }

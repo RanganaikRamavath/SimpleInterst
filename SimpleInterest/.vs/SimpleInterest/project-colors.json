@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "951c2241-c0d8-473e-969c-0a0d8bcf933e": {
+      "ProjectGuid": "951c2241-c0d8-473e-969c-0a0d8bcf933e",
+      "DisplayName": "SimpleInterest.UnitTesting",
+      "ColorIndex": 0
+    },
+    "cf345c2c-841c-4dbb-9084-ebf469015894": {
+      "ProjectGuid": "cf345c2c-841c-4dbb-9084-ebf469015894",
+      "DisplayName": "SimpleInterest",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

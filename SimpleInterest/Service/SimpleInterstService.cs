@@ -8,5 +8,9 @@ namespace SimpleInterest.Service
         {
             return (siInput.Principal * siInput.Year * siInput.RateOfInterest) / 100;
         }
+        public int CalculateSimpleInterestYearly(int siInput)
+        {
+            return siInput+2;
+        }
     }
 }

@@ -5290,11 +5290,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\SimpleInterest\\SimpleInterest.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\SimpleInterst\\SimpleInterest\\SimpleInterest.csproj",
       "projectName": "SimpleInterest",
-      "projectPath": "C:\\Users\\Admin\\Source\\Repos\\SimpleInterest\\SimpleInterest.csproj",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\SimpleInterst\\SimpleInterest\\SimpleInterest.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Source\\Repos\\SimpleInterest\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\SimpleInterst\\SimpleInterest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
